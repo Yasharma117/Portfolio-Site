@@ -3,11 +3,11 @@
 import Image from 'next/image';
 
 const artworks = [
-  { src: '/drawings/Daft_punk.png', alt: 'Drawing 1' },
+  { src: '/drawings/Daft_Punk.png', alt: 'Drawing 1' },
   { src: '/drawings/Kelly.png', alt: 'Drawing 2' },
   { src: '/drawings/Self_Boom_Boom.png', alt: 'Drawing 3' },
   { src: '/drawings/Mandolorean.png', alt: 'Drawing 4' },
-  { src: '/drawings/Signal.png', alt: 'Drawing 5' },
+  { src: '/drawings/SIGNAL.png', alt: 'Drawing 5' },
   { src: '/drawings/fairy.png', alt: 'Drawing 6' },
 ];
 

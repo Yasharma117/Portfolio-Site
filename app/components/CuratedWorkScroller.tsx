@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
-import { useState } from "react"
-import Link from "next/link"
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
 
 const curatedProjects = [
   {
@@ -15,7 +15,6 @@ const curatedProjects = [
     description:
       "Owning the full product roadmap at RideSense, from concept to creation and launch! Designing the best experience for bike riders.",
     thumbnail: "/curatedWork/ridesense-thumbnail.png",
-    preview: "/projects/ridesense/preview.mp4"
   },
   {
     id: "pantrypal",
@@ -23,9 +22,8 @@ const curatedProjects = [
     subtitle: "Concept app design",
     date: "Feb 2025",
     description:
-      "A kitchen inventory management and cooking app, allowing you to track the health of the items in your pantry",
+      "A kitchen inventory management and cooking app, allowing you to track the health of the items in your pantry.",
     thumbnail: "/curatedWork/pantrypal-thumbnail.png",
-    preview: "/projects/pantrypal/preview.mp4"
   },
   {
     id: "ambition",
@@ -33,19 +31,18 @@ const curatedProjects = [
     subtitle: "Concept app design",
     date: "Apr 2025",
     description:
-      "A career vision-building app that allows users to break down ambitious goals into actionable steps",
+      "A career vision-building app that allows users to break down ambitious goals into actionable steps.",
     thumbnail: "/curatedWork/ambition-thumbnail.png",
-    preview: "/curatedWork/ambition.gif"
-  }
-]
+  },
+];
 
 export default function CuratedWorkScroller() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="relative h-screen bg-black text-white overflow-hidden">
       {/* Fixed Header */}
-      <div className="sticky top-0 z-10 bg-black flex justify-between items-center w-full  py-2 mt-6">
+      <div className="sticky top-0 z-10 bg-black flex justify-between items-center w-full pt-6 pb-0">
         <Image
           src="/curatedWork/banner-title.png"
           alt="left banner"
@@ -53,7 +50,12 @@ export default function CuratedWorkScroller() {
           height={400}
           className="object-contain"
         />
-        <h2 className="text-3xl italic font-light">Curated Work</h2>
+        <h2
+          className="text-4xl italic font-light"
+          style={{ fontFamily: "var(--font-cooperlt)" }}
+        >
+          Curated Work
+        </h2>
         <Image
           src="/curatedWork/banner-title.png"
           alt="right banner"
@@ -69,7 +71,7 @@ export default function CuratedWorkScroller() {
           <section
             key={project.id}
             onClick={() => router.push(`/projects/${project.id}`)}
-            className="snap-start h-screen flex flex-col justify-center items-center px-6 py-10 cursor-pointer transition-all hover:scale-[1.01]"
+            className="snap-start h-screen flex flex-col justify-center items-center px-6 cursor-pointer transition-all hover:scale-[1.01]"
           >
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -77,20 +79,33 @@ export default function CuratedWorkScroller() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center max-w-4xl"
             >
-              <p className="mb-4 text-lg">{project.subtitle}</p>
+              <p
+                className="mb-4 text-2xl"
+                style={{ fontFamily: "var(--font-cooperlt)" }}
+              >
+                {project.subtitle}
+              </p>
 
-              <HoverPreview
-                imageSrc={project.thumbnail}
-                videoSrc={project.preview}
-              />
+              {/* Preview Image */}
+              <HoverPreview imageSrc={project.thumbnail} />
 
-              <p className="italic text-lg mt-6 mb-2">~ {project.date}</p>
-              <p className="text-md max-w-xl mx-auto leading-relaxed">{project.description}</p>
+              <p
+                className="text-2xl mt-2 mb-2 max-w-sm mx-auto font-light text-left items-start"
+                style={{ fontFamily: "var(--font-cooperlt)" }}
+              >
+                ~ {project.date}
+              </p>
+              <p
+                className="text-2xl max-w-sm mx-auto font-light text-left items-start"
+                style={{ fontFamily: "var(--font-cooperlt)" }}
+              >
+                {project.description}
+              </p>
 
-              {/* 👇 Link Button */}
+              {/* View Case Study Button */}
               <Link
                 href={`/projects/${project.id}`}
-                className="inline-block mt-6 px-4 py-2 border border-white rounded-full text-sm hover:bg-white hover:text-black transition-all"
+                className="inline-block mt-4 px-4 py-2 border border-white rounded-full text-lg hover:bg-white hover:text-black transition-all"
               >
                 View Case Study →
               </Link>
@@ -99,36 +114,21 @@ export default function CuratedWorkScroller() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-function HoverPreview({ imageSrc, videoSrc }: { imageSrc: string; videoSrc: string }) {
-  const [hovered, setHovered] = useState(false)
-
+function HoverPreview({ imageSrc }: { imageSrc: string }) {
   return (
-    <div
-      className="relative w-[700px] h-[400px] rounded-xl overflow-hidden mx-auto"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <Image
-        src={imageSrc}
-        alt="thumbnail"
-        fill
-        className={`object-cover transition-opacity duration-500 ${
-          hovered ? "opacity-0" : "opacity-100"
-        }`}
-      />
-      <video
-        src={videoSrc}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
-          hovered ? "opacity-100" : "opacity-0"
-        }`}
-      />
+    <div className="group transition-transform duration-500 hover:scale-105">
+      <div className="relative w-[600px] h-[350px] rounded-xl overflow-hidden mx-auto">
+        <Image
+          src={imageSrc}
+          alt="thumbnail"
+          width={600}
+          height={350}
+          className="object-cover"
+        />
+      </div>
     </div>
-  )
+  );
 }
