@@ -8,9 +8,9 @@ import mockupBottom from '../assets/control-bottom.png';
 
 export default function Control() {
   return (
-    <section className="relative w-full min-h-screen bg-[#a7b59b] px-6 md:px-16 lg:px-24 overflow-hidden flex items-center">
+    <section className="min-h-screen w-full bg-[#9EB692]  px-6 md:px-16 lg:px-8 text-[#fffaf2] overflow-visible">
       {/* === GRID CONTENT === */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-x-12 items-start text-[#f5f6f2]">
+      <div className="relative z-10 max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-x-2 items-start text-[#f5f6f2]">
 
         {/* === LEFT COLUMN === */}
         <div className="flex flex-col justify-start">
@@ -24,7 +24,7 @@ export default function Control() {
           </div>
 
           <p
-            className="md:text-lg max-w-sm leading-relaxed"
+            className="text-lg md:text-xl max-w-sm "
             style={{ fontFamily: 'var(--font-aeonik)' }}
           >
             The Smart Insights panel at the bottom contextualises inventory — 
@@ -34,7 +34,7 @@ export default function Control() {
         </div>
 
         {/* === CENTER COLUMN === */}
-        <div className="flex flex-col text-center items-center">
+        <div className="flex flex-col text-center items-right">
           <div className="w-64 mb-6">
             <Image
               src={controlLabel}
@@ -53,7 +53,7 @@ export default function Control() {
           </p>
 
           <p
-            className="italic text-2xl md:text-3xl leading-snug mb-8"
+            className="italic text-2xl md:text-3xl mb-8"
             style={{ fontFamily: 'var(--font-cooperlt)' }}
           >
             The user isn’t just seeing what’s left. <br />
@@ -61,7 +61,7 @@ export default function Control() {
           </p>
 
           <p
-            className="md:text-lg max-w-sm leading-relaxed"
+            className=" text-xl md:text-2xl max-w-md"
             style={{ fontFamily: 'var(--font-aeonik)' }}
           >
             Visual consistency in tags (Use Now, Details) reinforces decision clarity,
@@ -71,27 +71,27 @@ export default function Control() {
         </div>
 
         {/* === RIGHT COLUMN (anchored mockups) === */}
-        <div className="relative w-full">
+        <div className="relative  min-h-screen">
           {/* Top mockup anchored to top */}
-          <div className="absolute top-0 right-0">
+          <div className="absolute top-0 right-0 ">
             <Image
               src={mockupTop}
               alt="Top mockup"
               className="object-contain"
-              width={230}
-              height={320}
+              width={200}
+              height={300}
               priority
             />
           </div>
 
           {/* Bottom mockup anchored to bottom */}
-          <div className=" right-0">
+          <div className="absolute bottom-0 right-0">
             <Image
               src={mockupBottom}
               alt="Bottom mockup"
               className="object-contain"
-              width={230}
-              height={320}
+              width={200}
+              height={300}
               priority
             />
           </div>

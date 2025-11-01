@@ -5,7 +5,7 @@ import assistImage from "../assets/assist-img.png";
 
 export default function AssistSection() {
   return (
-    <section className="relative w-full bg-[#F7B9A3] text-[#1e1e1e] px-6 py-20 md:px-16 overflow-hidden">
+    <section className="relative w-full bg-[#F1AF9F] text-[#1e1e1e] px-6 py-20 md:px-16 overflow-hidden">
       {/* Top heading + subheading */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h2
