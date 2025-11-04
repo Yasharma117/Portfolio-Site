@@ -43,7 +43,7 @@ export default function Hero() {
           className="mb-8 text-4xl md:text-[40px] lg:text-[40px] font-bold text-black"
           style={{ fontFamily: "var(--font-offbit)" }}
         >
-          Designing clean, user friendly products.
+          Designing fun, clean, user friendly products.
         </h1>
 
         <p
