@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AboutMe />
       <CuratedWorkScroller />
-      <AboutMe/>
-      <Drawings/>
-      <Footer/>
+      <Drawings />
+      <Footer />
       {/* …other sections */}
     </>
   );

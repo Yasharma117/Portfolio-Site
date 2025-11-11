@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-20 px-6 text-center -mt-42">
+      <div className="relative z-20 px-6 text-center -mt-36">
         <h1
           className="mb-8 text-4xl md:text-[40px] lg:text-[40px] font-bold text-black"
           style={{ fontFamily: "var(--font-offbit)" }}
@@ -54,7 +54,7 @@ export default function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex justify-center items-center gap-6 mb-12">
+        <div className="flex justify-center items-center gap-6 mb-6">
           {/* Resume */}
           <Link
             href="https://drive.google.com/file/d/167030nGEZKvaReJmDTMrEsrOltUc7uLf/view?usp=sharing"
@@ -102,19 +102,17 @@ export default function Hero() {
             />
           </Link>
         </div>
+        {/* "View Work" button */}
+        <Link
+          href="#curated-work"
+          className="inline-block rounded-lg px-10 py-3 text-white font-bold text-md bg-gradient-to-b from-[#5670FB] to-[#2144FF]
+                     border border-[#536AF0]
+                     shadow-[0_4px_3px_#426B85]
+                     [box-shadow:inset_0_5px_5px_rgba(255,255,255,0.25)]"
+        >
+          View Work
+        </Link>
       </div>
-
-      {/* Bottom-right "View Work" button */}
-      <Link
-        href="/Yash_CV.pdf"
-        target="_blank"
-        className="absolute bottom-10 right-10 z-30 rounded-lg px-10 py-3 text-white font-bold text-lg bg-gradient-to-b from-[#5670FB] to-[#2144FF]
-                   border border-[#536AF0]
-                   shadow-[0_4px_3px_#426B85]
-                   [box-shadow:inset_0_5px_5px_rgba(255,255,255,0.25)]"
-      >
-        View Work
-      </Link>
     </section>
   );
 }

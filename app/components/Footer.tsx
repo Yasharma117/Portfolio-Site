@@ -30,8 +30,7 @@ export default function Footer() {
 
         {/* Right: Contact icons and Receipt */}
         <div className="flex flex-col items-end gap-8">
-          <div className="flex gap-10 items-center">
-            {/* Gmail */}
+          {/* <div className="flex gap-10 items-center">
             <a href="mailto:yash.republic@gmail.com">
               <div className="bg-white rounded-lg px-6 py-4 flex items-center gap-24 text-black">
                 <div className="text-s italic font-semibold leading-tight">
@@ -47,7 +46,7 @@ export default function Footer() {
                 />
               </div>
             </a>
-            {/* LinkedIn */}
+        
             <a href="http://www.linkedin.com/in/yashsharma71102">
               <div className="bg-white rounded-lg p-2">
                 <Image
@@ -59,7 +58,7 @@ export default function Footer() {
               </div>
             </a>
 
-            {/* Discord */}
+
             <a href="http://www.linkedin.com/in/yashsharma71102">
               <div className="bg-white rounded-lg p-2">
                 <Image
@@ -70,10 +69,10 @@ export default function Footer() {
                 />
               </div>
             </a>
-          </div>
+          </div> */}
 
           {/* Receipt Section (now placed below icons) */}
-          <div className="flex flex-col items-center justify-center mt-2">
+          <div className="flex flex-col items-center justify-center ">
             <p className="text-white font-mono text-sm tracking-widest mb-4">
               DON’T FORGET YOUR RECEIPT
             </p>

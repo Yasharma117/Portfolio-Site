@@ -9,13 +9,13 @@ import React from "react";
 
 const curatedProjects = [
   {
-    id: "ridesense",
-    title: "🚧 CaseStudy under construction, coming Soon 🚧",
-    subtitle: "🚧 CaseStudy under construction, coming Soon 🚧",
-    date: "July 2025",
+    id: "ambition",
+    title: "Ambition",
+    subtitle: "Concept app design",
+    date: "Apr 2025",
     description:
-      "Owning the full product roadmap at RideSense, from concept to creation and launch! Designing the best experience for bike riders.",
-    thumbnail: "/curatedWork/ridesense-thumbnail.png",
+      "A career vision-building app that allows users to break down ambitious goals into actionable steps.",
+    thumbnail: "/curatedWork/ambition-thumbnail.png",
   },
   {
     id: "pantrypal",
@@ -27,13 +27,13 @@ const curatedProjects = [
     thumbnail: "/curatedWork/pantrypal-thumbnail.png",
   },
   {
-    id: "ambition",
-    title: "Ambition",
-    subtitle: "Concept app design",
-    date: "Apr 2025",
+    id: "ridesense",
+    title: "🚧 CaseStudy under construction, coming Soon 🚧",
+    subtitle: "🚧 CaseStudy under construction, coming Soon 🚧",
+    date: "July 2025",
     description:
-      "A career vision-building app that allows users to break down ambitious goals into actionable steps.",
-    thumbnail: "/curatedWork/ambition-thumbnail.png",
+      "Owning the full product roadmap at RideSense, from concept to creation and launch! Designing the best experience for bike riders.",
+    thumbnail: "/curatedWork/ridesense-thumbnail.png",
   },
 ];
 
@@ -71,16 +71,19 @@ export default function CuratedWorkScroller() {
     };
   }, []);
 
-  const scrollToSlide = useCallback((idx: number) => {
-    const target = slideRefs[idx]?.current;
-    if (!target) return;
+  const scrollToSlide = useCallback(
+    (idx: number) => {
+      const target = slideRefs[idx]?.current;
+      if (!target) return;
 
-    setAnimating(true);
-    const top = window.scrollY + target.getBoundingClientRect().top;
-    window.scrollTo({ top, behavior: "smooth" });
-    // simple throttle window for smooth scroll end
-    setTimeout(() => setAnimating(false), 650);
-  }, [slideRefs]);
+      setAnimating(true);
+      const top = window.scrollY + target.getBoundingClientRect().top;
+      window.scrollTo({ top, behavior: "smooth" });
+      // simple throttle window for smooth scroll end
+      setTimeout(() => setAnimating(false), 650);
+    },
+    [slideRefs]
+  );
 
   useEffect(() => {
     const onScroll = () => {
@@ -133,7 +136,8 @@ export default function CuratedWorkScroller() {
     touchStartY.current = e.touches[0].clientY;
   };
   const onTouchMove = (e: React.TouchEvent) => {
-    if (!isInSection.current || animating || touchStartY.current === null) return;
+    if (!isInSection.current || animating || touchStartY.current === null)
+      return;
     const diff = touchStartY.current - e.touches[0].clientY;
 
     // threshold
@@ -156,6 +160,7 @@ export default function CuratedWorkScroller() {
 
   return (
     <section
+      id="curated-work"
       ref={sectionRef}
       // we keep overflow visible; the window is the scroll container
       className="relative bg-black text-white"
